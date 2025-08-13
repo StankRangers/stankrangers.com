@@ -1,0 +1,127 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Stank Rangers featuring Richey Richards</title>
+  <meta name="description" content="High‑energy bluegrass with a wild twist — you can smell the music." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green:#29AD75;
+      --yellow:#F8EF61;
+      --ink:#ffffff;
+      --bg:#000000;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0}
+    body{font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",sans-serif;background:var(--bg);color:var(--ink)}
+
+    .screen{min-height:100dvh;display:grid;grid-template-rows:1fr auto;}
+
+    /* LOGO AREA */
+    .logo-wrap{display:grid;place-items:center;overflow:hidden;padding:18px}
+    .logo{max-width:min(78vmin,760px);width:100%;height:auto;filter:drop-shadow(0 10px 40px rgba(0,0,0,.6))}
+
+    /* ARTISTIC DOCK */
+    .dock{position:relative;display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:18px 18px;border-top:1px solid rgba(255,255,255,.06);background:linear-gradient(180deg,#0a0a0a,#050505)}
+
+    /* Title treatment */
+    .brand{display:flex;align-items:center;gap:12px}
+    .title{
+      font-family:"Bebas Neue", sans-serif;
+      font-size:clamp(28px,5.5vw,56px);
+      line-height:.9;
+      letter-spacing:.5px;
+      margin:0;
+      background:linear-gradient(90deg,var(--yellow),var(--green));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+      filter:drop-shadow(0 2px 0 rgba(0,0,0,.7));
+      text-transform:uppercase;
+    }
+    .subtitle{
+      margin:0; margin-top:4px; font-weight:800; font-size:clamp(12px,2.2vw,16px);
+      letter-spacing:.3px; color:#c8ffeb; text-shadow:0 0 12px rgba(41,173,117,.35);
+    }
+    .flourish{width:70px;height:6px;border-radius:999px;background:linear-gradient(90deg,var(--green),transparent);opacity:.9}
+
+    /* Fancy link buttons */
+    .links{display:flex;flex-wrap:wrap;gap:10px}
+    .btn{
+      --ring:rgba(41,173,117,.35);
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 16px;border-radius:14px;font-weight:800;text-decoration:none;
+      border:1px solid rgba(255,255,255,.06);
+      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+      box-shadow:0 2px 0 rgba(255,255,255,.08) inset, 0 10px 24px rgba(0,0,0,.35);
+      transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .btn .icon{font-size:18px}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 2px 0 rgba(255,255,255,.1) inset, 0 14px 28px var(--ring);border-color:var(--green)}
+    .btn.green{background:linear-gradient(180deg,rgba(41,173,117,.9),rgba(41,173,117,.8)); color:#001812; --ring:rgba(41,173,117,.45)}
+    .btn.yellow{background:linear-gradient(180deg,rgba(248,239,97,1),rgba(248,239,97,.92)); color:#101010; --ring:rgba(248,239,97,.35)}
+    .btn.outline{border-color:rgba(41,173,117,.6); color:#eafff6; background:linear-gradient(180deg,rgba(8,20,16,.6),rgba(8,20,16,.3))}
+
+    @media (max-width:640px){
+      .dock{justify-content:center;gap:14px;text-align:center}
+      .brand{width:100%;justify-content:center;flex-direction:column}
+    }
+
+    /* Complaint modal (unchanged behavior) */
+    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;padding:16px}
+    .modal{background:#121212;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;max-width:420px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+    .modal h3{margin:0 0 10px}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;font-weight:800;text-decoration:none;border:2px solid #1f3f35;color:#e7fff6;background:#0d1f19}
+    .close{background:none;border:none;color:#fff;opacity:.7;font-size:14px;margin-top:10px;cursor:pointer}
+  </style>
+</head>
+<body>
+  <main class="screen">
+    <div class="logo-wrap">
+      <img class="logo" alt="The Stank Rangers Logo" src="stank-rangers-logo.webp" />
+    </div>
+
+    <footer class="dock" aria-label="Links">
+      <div class="brand">
+        <div>
+          <h2 class="title">The Stank Rangers</h2>
+          <div class="flourish" aria-hidden="true"></div>
+          <p class="subtitle">Featuring Richey Richards</p>
+        </div>
+      </div>
+      <nav class="links">
+        <a class="btn green" href="https://stank-rangers.printify.me/" target="_blank" rel="noopener"><span class="icon">🛒</span> Merchandise</a>
+        <a class="btn yellow" href="#" onclick="alert('Don\'t bother you can\'t afford us');return false;"><span class="icon">📅</span> Booking</a>
+        <a class="btn outline" href="https://www.youtube.com/@Stank-Rangers" target="_blank" rel="noopener"><span class="icon">▶︎</span> YouTube</a>
+        <a class="btn outline" href="https://soundcloud.com" target="_blank" rel="noopener" title="Add your SoundCloud URL"><span class="icon">♪</span> SoundCloud</a>
+        <a class="btn outline" href="#complaints" onclick="return openComplaint();" title="Send a complaint"><span class="icon">☹</span> Complaints</a>
+      </nav>
+    </footer>
+  </main>
+
+  <div class="overlay" id="complaintsOverlay" role="dialog" aria-modal="true" aria-labelledby="complaintsTitle">
+    <div class="modal">
+      <h3 id="complaintsTitle">Send a complaint</h3>
+      <p style="margin-top:0">Pick how you want to send the message:</p>
+      <div class="row">
+        <a class="chip" href="mailto:stankrangers@gmail.com?subject=Complaint">📧 Email app (mailto)</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=stankrangers@gmail.com&su=Complaint">✉️ Gmail compose</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://outlook.office.com/mail/deeplink/compose?to=stankrangers@gmail.com&subject=Complaint">📮 Outlook on the web</a>
+      </div>
+      <button class="close" onclick="hideComplaint()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function openComplaint(){
+      try { window.location.href = 'mailto:stankrangers@gmail.com?subject=Complaint'; } catch(e) {}
+      setTimeout(function(){ var ov = document.getElementById('complaintsOverlay'); if(ov) ov.style.display = 'flex'; }, 800);
+      return false;
+    }
+    function hideComplaint(){ var ov = document.getElementById('complaintsOverlay'); if(ov) ov.style.display = 'none'; }
+  </script>
+</body>
+</html>
